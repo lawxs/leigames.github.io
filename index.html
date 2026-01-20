@@ -6,7 +6,7 @@
 <title>@leigames | Links</title>
 
 <style>
-:root {
+:root{
   --bg:#0b0b0b;
   --card:#141414;
   --text:#ffffff;
@@ -16,6 +16,10 @@
   --livepix:#8b5cf6;
   --discord:#5865f2;
   --whatsapp:#25d366;
+}
+
+*{
+  box-sizing:border-box;
 }
 
 body{
@@ -32,7 +36,7 @@ body{
 .container{
   width:100%;
   max-width:420px;
-  padding:30px 24px;
+  padding:32px 24px;
   text-align:center;
 }
 
@@ -58,31 +62,47 @@ h1{
 a{
   text-decoration:none;
   padding:16px;
-  border-radius:14px;
+  border-radius:16px;
   background:var(--card);
   color:var(--text);
   font-weight:600;
   display:flex;
   align-items:center;
-  gap:14px;
   justify-content:center;
+  gap:14px;
   border:1px solid transparent;
-  transition:.2s;
+  transition:
+    transform .15s ease,
+    box-shadow .25s ease,
+    border .25s ease;
 }
 
 a:hover{
   transform:translateY(-1px);
 }
 
+a:active{
+  transform:scale(.97);
+}
+
+/* ÍCONES – correção definitiva */
 .icon{
   width:22px;
   height:22px;
   display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.icon svg{
+  width:22px;
+  height:22px;
+  display:block;
 }
 
 /* YouTube */
 .youtube{
-  border:1px solid rgba(255,59,59,.5);
+  border:1px solid rgba(255,59,59,.55);
   box-shadow:0 0 18px rgba(255,59,59,.35);
 }
 
@@ -120,33 +140,37 @@ a:hover{
 
 <div class="links">
 
+<!-- YouTube -->
 <a href="https://youtube.com/@leigames?si=qIgWW-3MGTUaLXQ0" target="_blank" class="youtube">
   <span class="icon">
-    <svg viewBox="0 0 24 24" fill="var(--youtube)">
+    <svg viewBox="0 0 24 24" fill="var(--youtube)" xmlns="http://www.w3.org/2000/svg">
       <path d="M23.5 6.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-1C17.4 2.5 12 2.5 12 2.5h0s-5.4 0-8.5.4c-.4 0-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 7.2.4s5.4 0 8.5-.4c.4 0 1.3-.1 2.1-1 .7-.7.9-2.3.9-2.3s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8z"/>
-      <polygon points="9.6,14.2 15.4,11 9.6,7.8"/>
+      <polygon points="9.6,14.2 15.4,11 9.6,7.8" fill="#fff"/>
     </svg>
   </span>
   YouTube
 </a>
 
+<!-- LivePix -->
 <a href="https://livepix.gg/michelx" target="_blank" class="livepix">
   <span class="icon">💜</span>
   LivePix · Support / Apoiar
 </a>
 
+<!-- Discord -->
 <a href="https://discord.gg/zqtGMmQRN" target="_blank" class="discord">
   <span class="icon">
-    <svg viewBox="0 0 24 24" fill="var(--discord)">
+    <svg viewBox="0 0 24 24" fill="var(--discord)" xmlns="http://www.w3.org/2000/svg">
       <path d="M20.3 4.5A19.6 19.6 0 0015.7 3l-.2.4a18.3 18.3 0 00-4.9 0l-.2-.4A19.6 19.6 0 003.7 4.5 20 20 0 001.5 16.6a19.4 19.4 0 005.9 3l.5-.8a12.6 12.6 0 01-1.8-.9l.4-.3a13.9 13.9 0 0012.9 0l.4.3a12.6 12.6 0 01-1.8.9l.5.8a19.4 19.4 0 005.9-3 20 20 0 00-2.1-12.1z"/>
     </svg>
   </span>
   Discord · Community / Comunidade
 </a>
 
+<!-- WhatsApp -->
 <a href="https://chat.whatsapp.com/GVaxirEIhMCBnEE4h60jXo" target="_blank" class="whatsapp">
   <span class="icon">
-    <svg viewBox="0 0 24 24" fill="var(--whatsapp)">
+    <svg viewBox="0 0 24 24" fill="var(--whatsapp)" xmlns="http://www.w3.org/2000/svg">
       <path d="M20.5 3.5A11.7 11.7 0 0012 0 11.7 11.7 0 001.5 17.9L0 24l6.3-1.6A11.7 11.7 0 0012 24a11.7 11.7 0 008.5-20.5z"/>
     </svg>
   </span>
