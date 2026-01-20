@@ -25,7 +25,7 @@
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 6px;
     }
 
@@ -48,12 +48,25 @@
       background: #1a1a1a;
       color: #ffffff;
       font-weight: 600;
-      transition: background 0.2s ease, transform 0.1s ease;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
 
     a:hover {
       background: #2a2a2a;
       transform: scale(1.01);
+    }
+
+    a:active {
+      transform: scale(0.97);
+    }
+
+    a.highlight {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    a.highlight:hover {
+      background: #e6e6e6;
     }
 
     .footer {
@@ -65,13 +78,16 @@
 </head>
 <body>
   <div class="container">
+
     <h1>@leigames</h1>
     <div class="subtitle">
       Content Creator · Criador de Conteúdo
     </div>
 
     <div class="links">
-      <a href="https://youtube.com/@leigames?si=qIgWW-3MGTUaLXQ0" target="_blank">
+      <a href="https://youtube.com/@leigames?si=qIgWW-3MGTUaLXQ0"
+         target="_blank"
+         class="highlight">
         🎥 YouTube
       </a>
 
@@ -91,6 +107,7 @@
     <div class="footer">
       © leigames
     </div>
+
   </div>
 </body>
 </html>
