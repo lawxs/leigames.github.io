@@ -6,11 +6,20 @@
   <title>@leigames | Links</title>
 
   <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #141414;
+      --purple: #8b5cf6;
+      --purple-dark: #6d28d9;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
+      background: var(--bg);
+      color: var(--text);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,57 +29,66 @@
     .container {
       width: 100%;
       max-width: 420px;
-      padding: 24px;
+      padding: 28px 24px;
       text-align: center;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 6px;
+      letter-spacing: 0.5px;
     }
 
     .subtitle {
       font-size: 14px;
-      color: #b5b5b5;
-      margin-bottom: 24px;
+      color: var(--muted);
+      margin-bottom: 30px;
     }
 
     .links {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
 
     a {
       text-decoration: none;
       padding: 16px;
-      border-radius: 10px;
-      background: #1a1a1a;
-      color: #ffffff;
+      border-radius: 14px;
+      background: var(--card);
+      color: var(--text);
       font-weight: 600;
-      transition: background 0.2s ease, transform 0.15s ease;
+      border: 1px solid transparent;
+      transition: 
+        background 0.25s ease,
+        transform 0.15s ease,
+        box-shadow 0.25s ease,
+        border 0.25s ease;
     }
 
     a:hover {
-      background: #2a2a2a;
-      transform: scale(1.01);
+      transform: translateY(-1px);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
     }
 
     a:active {
       transform: scale(0.97);
     }
 
+    /* Botão principal */
     a.highlight {
-      background: #ffffff;
-      color: #000000;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
     }
 
     a.highlight:hover {
-      background: #e6e6e6;
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.45);
     }
 
     .footer {
-      margin-top: 28px;
+      margin-top: 34px;
       font-size: 12px;
       color: #777;
     }
@@ -107,7 +125,6 @@
     <div class="footer">
       © leigames
     </div>
-
   </div>
 </body>
 </html>
