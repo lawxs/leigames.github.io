@@ -1,232 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lei Games</title>
 
-<title>Lei Games | Links Oficiais</title>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
-<!-- FONTE -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<style>
-:root{
-  --bg:#0b0b0b;
-  --card:#141414;
-  --text:#ffffff;
-  --muted:#b5b5b5;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
 
-  --youtube:#ff3b3b;
-  --livepix:#8b5cf6;
-  --discord:#5865f2;
-  --whatsapp:#25d366;
-}
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a0f2e, #000);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-*{ box-sizing:border-box; }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 20px;
+      text-align: center;
+    }
 
-/* AVISO TIKTOK */
-.tiktok-warning{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#111;
-  color:#25d366;
-  padding:12px 16px;
-  text-align:center;
-  font-size:13px;
-  z-index:9999;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  animation:slideDown .4s ease forwards, pulse 2.2s ease-in-out infinite;
-}
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #b983ff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
 
-@keyframes slideDown{
-  from{ transform:translateY(-100%); }
-  to{ transform:translateY(0); }
-}
+    .subtitle {
+      opacity: 0.75;
+      margin-bottom: 28px;
+    }
 
-@keyframes pulse{
-  0%,100%{ opacity:1; }
-  50%{ opacity:.7; }
-}
+    /* AVISO */
+    .alert {
+      display: none;
+      margin-bottom: 20px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      animation: pulse 1.6s infinite;
+      font-size: 0.9rem;
+    }
 
-body{
-  margin:0;
-  font-family:'Space Grotesk', system-ui, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-}
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
 
-body.tiktok{
-  padding-top:52px;
-}
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px;
+      margin: 14px 0;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
 
-.container{
-  width:100%;
-  max-width:420px;
-  padding:36px 24px;
-  text-align:center;
-}
+    .btn:hover {
+      transform: scale(1.02);
+    }
 
-/* MARCA */
-.brand{
-  font-size:42px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  margin-bottom:8px;
-  background:linear-gradient(90deg,#a78bfa,#ffffff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 0 28px rgba(167,139,250,.35);
-}
+    .youtube { border-color: #ff4d4d; box-shadow: 0 0 18px rgba(255,77,77,.35); }
+    .livepix { border-color: #b983ff; box-shadow: 0 0 18px rgba(185,131,255,.35); }
+    .discord { border-color: #5865f2; box-shadow: 0 0 18px rgba(88,101,242,.35); }
+    .whatsapp { border-color: #25d366; box-shadow: 0 0 18px rgba(37,211,102,.35); }
 
-.handle{
-  font-size:14px;
-  color:var(--muted);
-  margin-bottom:36px;
-}
-
-/* LINKS */
-.links{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-a{
-  text-decoration:none;
-  padding:16px;
-  border-radius:16px;
-  background:var(--card);
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-  border:1px solid transparent;
-  transition:transform .15s ease, box-shadow .25s ease, border .25s ease;
-}
-
-a:active{ transform:scale(.97); }
-
-.icon{
-  width:22px;
-  height:22px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.icon svg{
-  width:22px;
-  height:22px;
-  display:block;
-  fill:currentColor;
-}
-
-/* CORES */
-.youtube{
-  color:var(--youtube);
-  border:1px solid rgba(255,59,59,.55);
-  box-shadow:0 0 18px rgba(255,59,59,.35);
-}
-
-.livepix{
-  color:var(--livepix);
-  border:1px solid rgba(139,92,246,.6);
-  box-shadow:0 0 18px rgba(139,92,246,.45);
-}
-
-.discord{
-  color:var(--discord);
-  border:1px solid rgba(88,101,242,.6);
-  box-shadow:0 0 18px rgba(88,101,242,.45);
-}
-
-.whatsapp{
-  color:var(--whatsapp);
-  border:1px solid rgba(37,211,102,.6);
-  box-shadow:0 0 18px rgba(37,211,102,.45);
-}
-
-.footer{
-  margin-top:40px;
-  font-size:12px;
-  color:#777;
-}
-</style>
+    footer {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<!-- AVISO SIMPLES E ANIMADO -->
-<div class="tiktok-warning" id="tiktokWarning">
-  ⚠️ No TikTok, use os 3 pontinhos (⋮) e abra no navegador
-</div>
+    <h1>LEI GAMES</h1>
+    <div class="subtitle">@leigames · Content Creator</div>
 
-<div class="container">
+    <!-- AVISO -->
+    <div class="alert" id="alert">
+      Para links funcionarem corretamente, abra pelo navegador externo (⋮)
+    </div>
 
-<div class="brand">LEI&nbsp;GAMES</div>
-<div class="handle">@leigames · Content Creator</div>
+    <a class="btn youtube" href="https://youtube.com/@leigames" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
 
-<div class="links">
+    <a class="btn livepix" href="https://livepix.gg/michelx" target="_blank">
+      <i class="fas fa-heart"></i> LivePix · Apoiar
+    </a>
 
-<a href="https://youtube.com/@leigames" target="_blank" class="youtube">
-  <span class="icon">
-    <svg viewBox="0 0 24 24">
-      <path d="M23.5 6.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-1C17.4 2.5 12 2.5 12 2.5s-5.4 0-8.5.4c-.4 0-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 7.2.4s5.4 0 8.5-.4c.4 0 1.3-.1 2.1-1 .7-.7.9-2.3.9-2.3s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8z"/>
-      <polygon points="9.6,14.2 15.4,11 9.6,7.8" fill="#fff"/>
-    </svg>
-  </span>
-  YouTube
-</a>
+    <a class="btn discord" href="https://discord.gg/zqtGMmQRN" target="_blank">
+      <i class="fab fa-discord"></i> Discord · Comunidade
+    </a>
 
-<a href="https://livepix.gg/michelx" target="_blank" class="livepix">
-  <span class="icon">💜</span>
-  LivePix · Apoiar
-</a>
+    <a class="btn whatsapp" href="https://chat.whatsapp.com/GVaxirEIhMCBnEE4h60jXo" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp · Entrar no Grupo
+    </a>
 
-<a href="https://discord.gg/zqtGMmQRN" target="_blank" class="discord">
-  <span class="icon">
-    <svg viewBox="0 0 24 24">
-      <path d="M20.3 4.5A19.6 19.6 0 0015.7 3l-.2.4a18.3 18.3 0 00-4.9 0l-.2-.4A19.6 19.6 0 003.7 4.5 20 20 0 001.5 16.6a19.4 19.4 0 005.9 3l.5-.8a12.6 12.6 0 01-1.8-.9l.4-.3a13.9 13.9 0 0012.9 0l.4.3a12.6 12.6 0 01-1.8.9l.5.8a19.4 19.4 0 005.9-3 20 20 0 00-2.1-12.1z"/>
-    </svg>
-  </span>
-  Discord · Comunidade
-</a>
+    <footer>© Lei Games</footer>
+  </div>
 
-<a href="https://chat.whatsapp.com/GVaxirEIhMCBnEE4h60jXo"
-   target="_blank"
-   class="whatsapp">
-  <span class="icon">
-    <svg viewBox="0 0 24 24">
-      <path d="M20.5 3.5A11.7 11.7 0 0012 0 11.7 11.7 0 001.5 17.9L0 24l6.3-1.6A11.7 11.7 0 0012 24a11.7 11.7 0 008.5-20.5z"/>
-    </svg>
-  </span>
-  WhatsApp · Grupo
-</a>
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    const isWebView =
+      ua.includes("wv") ||
+      ua.includes("webview") ||
+      ua.includes("tiktok") ||
+      (ua.includes("android") && !ua.includes("chrome")) ||
+      (ua.includes("iphone") && !ua.includes("safari"));
 
-</div>
-
-<div class="footer">© Lei Games</div>
-
-</div>
-
-<script>
-(function(){
-  if(navigator.userAgent.toLowerCase().includes("tiktok")){
-    document.body.classList.add("tiktok");
-    document.getElementById("tiktokWarning").style.display = "block";
-  }
-})();
-</script>
-
+    if (isWebView) {
+      document.getElementById("alert").style.display = "block";
+    }
+  </script>
 </body>
 </html>
