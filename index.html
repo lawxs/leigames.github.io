@@ -24,7 +24,6 @@
   --whatsapp:#25d366;
 }
 
-/* RESET */
 *{ box-sizing:border-box; }
 
 /* AVISO TIKTOK */
@@ -35,16 +34,23 @@
   left:0;
   width:100%;
   background:#111;
-  color:#fff;
-  padding:14px 16px;
+  color:#25d366;
+  padding:12px 16px;
   text-align:center;
-  font-size:14px;
+  font-size:13px;
   z-index:9999;
-  border-bottom:1px solid rgba(255,255,255,.1);
+  animation:slideDown .4s ease forwards, pulse 2.2s ease-in-out infinite;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.tiktok-warning strong{
-  color:#25d366;
+@keyframes slideDown{
+  from{ transform:translateY(-100%); }
+  to{ transform:translateY(0); }
+}
+
+@keyframes pulse{
+  0%,100%{ opacity:1; }
+  50%{ opacity:.7; }
 }
 
 body{
@@ -56,11 +62,10 @@ body{
   justify-content:center;
   align-items:center;
   min-height:100vh;
-  padding-top:0;
 }
 
 body.tiktok{
-  padding-top:60px;
+  padding-top:52px;
 }
 
 .container{
@@ -109,7 +114,6 @@ a{
   transition:transform .15s ease, box-shadow .25s ease, border .25s ease;
 }
 
-a:hover{ transform:translateY(-1px); }
 a:active{ transform:scale(.97); }
 
 .icon{
@@ -118,13 +122,6 @@ a:active{ transform:scale(.97); }
   display:flex;
   align-items:center;
   justify-content:center;
-}
-
-.icon svg{
-  width:22px;
-  height:22px;
-  display:block;
-  fill:currentColor;
 }
 
 /* CORES */
@@ -162,10 +159,9 @@ a:active{ transform:scale(.97); }
 
 <body>
 
-<!-- AVISO -->
+<!-- AVISO SIMPLES -->
 <div class="tiktok-warning" id="tiktokWarning">
-  ⚠️ Você está no navegador do TikTok.<br>
-  Para entrar no grupo do <strong>WhatsApp</strong>: toque nos <strong>3 pontinhos (⋮)</strong> e escolha <strong>“Abrir no navegador”</strong>.
+  ⚠️ No TikTok, use os 3 pontinhos (⋮) e abra no navegador
 </div>
 
 <div class="container">
@@ -182,19 +178,19 @@ a:active{ transform:scale(.97); }
 
 <a href="https://livepix.gg/michelx" target="_blank" class="livepix">
   <span class="icon">💜</span>
-  LivePix · Support / Apoiar
+  LivePix
 </a>
 
 <a href="https://discord.gg/zqtGMmQRN" target="_blank" class="discord">
   <span class="icon">💬</span>
-  Discord · Comunidade
+  Discord
 </a>
 
 <a href="https://chat.whatsapp.com/GVaxirEIhMCBnEE4h60jXo"
    target="_blank"
    class="whatsapp">
   <span class="icon">🟢</span>
-  WhatsApp · Entrar no Grupo
+  WhatsApp
 </a>
 
 </div>
@@ -205,8 +201,7 @@ a:active{ transform:scale(.97); }
 
 <script>
 (function(){
-  const ua = navigator.userAgent.toLowerCase();
-  if(ua.includes("tiktok")){
+  if(navigator.userAgent.toLowerCase().includes("tiktok")){
     document.body.classList.add("tiktok");
     document.getElementById("tiktokWarning").style.display = "block";
   }
