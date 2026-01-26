@@ -26,33 +26,6 @@
 
 *{ box-sizing:border-box; }
 
-/* AVISO TIKTOK */
-.tiktok-warning{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#111;
-  color:#25d366;
-  padding:12px 16px;
-  text-align:center;
-  font-size:13px;
-  z-index:9999;
-  animation:slideDown .4s ease forwards, pulse 2.2s ease-in-out infinite;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-@keyframes slideDown{
-  from{ transform:translateY(-100%); }
-  to{ transform:translateY(0); }
-}
-
-@keyframes pulse{
-  0%,100%{ opacity:1; }
-  50%{ opacity:.7; }
-}
-
 body{
   margin:0;
   font-family:'Space Grotesk', system-ui, sans-serif;
@@ -62,10 +35,6 @@ body{
   justify-content:center;
   align-items:center;
   min-height:100vh;
-}
-
-body.tiktok{
-  padding-top:52px;
 }
 
 .container{
@@ -114,6 +83,7 @@ a{
   transition:transform .15s ease, box-shadow .25s ease, border .25s ease;
 }
 
+a:hover{ transform:translateY(-1px); }
 a:active{ transform:scale(.97); }
 
 .icon{
@@ -122,6 +92,13 @@ a:active{ transform:scale(.97); }
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+.icon svg{
+  width:22px;
+  height:22px;
+  display:block;
+  fill:currentColor;
 }
 
 /* CORES */
@@ -158,12 +135,6 @@ a:active{ transform:scale(.97); }
 </head>
 
 <body>
-
-<!-- AVISO SIMPLES -->
-<div class="tiktok-warning" id="tiktokWarning">
-  ⚠️ No TikTok, use os 3 pontinhos (⋮) e abra no navegador
-</div>
-
 <div class="container">
 
 <div class="brand">LEI&nbsp;GAMES</div>
@@ -171,26 +142,44 @@ a:active{ transform:scale(.97); }
 
 <div class="links">
 
-<a href="https://youtube.com/@leigames" target="_blank" class="youtube">
-  <span class="icon">▶️</span>
+<!-- YOUTUBE -->
+<a href="https://youtube.com/@leigames" target="_blank" rel="noopener noreferrer" class="youtube">
+  <span class="icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M23.5 6.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-1C17.4 2.5 12 2.5 12 2.5s-5.4 0-8.5.4c-.4 0-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 7.2.4s5.4 0 8.5-.4c.4 0 1.3-.1 2.1-1 .7-.7.9-2.3.9-2.3s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8z"/>
+      <polygon points="9.6,14.2 15.4,11 9.6,7.8" fill="#fff"/>
+    </svg>
+  </span>
   YouTube
 </a>
 
-<a href="https://livepix.gg/michelx" target="_blank" class="livepix">
+<!-- LIVEPIX -->
+<a href="https://livepix.gg/michelx" target="_blank" rel="noopener noreferrer" class="livepix">
   <span class="icon">💜</span>
-  LivePix
+  LivePix · Support / Apoiar
 </a>
 
-<a href="https://discord.gg/zqtGMmQRN" target="_blank" class="discord">
-  <span class="icon">💬</span>
-  Discord
+<!-- DISCORD -->
+<a href="https://discord.gg/zqtGMmQRN" target="_blank" rel="noopener noreferrer" class="discord">
+  <span class="icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M20.3 4.5A19.6 19.6 0 0015.7 3l-.2.4a18.3 18.3 0 00-4.9 0l-.2-.4A19.6 19.6 0 003.7 4.5 20 20 0 001.5 16.6a19.4 19.4 0 005.9 3l.5-.8a12.6 12.6 0 01-1.8-.9l.4-.3a13.9 13.9 0 0012.9 0l.4.3a12.6 12.6 0 01-1.8.9l.5.8a19.4 19.4 0 005.9-3 20 20 0 00-2.1-12.1z"/>
+    </svg>
+  </span>
+  Discord · Comunidade
 </a>
 
+<!-- WHATSAPP (LINK OFICIAL DE GRUPO) -->
 <a href="https://chat.whatsapp.com/GVaxirEIhMCBnEE4h60jXo"
    target="_blank"
+   rel="noopener noreferrer"
    class="whatsapp">
-  <span class="icon">🟢</span>
-  WhatsApp
+  <span class="icon">
+    <svg viewBox="0 0 24 24">
+      <path d="M20.5 3.5A11.7 11.7 0 0012 0 11.7 11.7 0 001.5 17.9L0 24l6.3-1.6A11.7 11.7 0 0012 24a11.7 11.7 0 008.5-20.5z"/>
+    </svg>
+  </span>
+  WhatsApp · Entrar no Grupo
 </a>
 
 </div>
@@ -198,15 +187,5 @@ a:active{ transform:scale(.97); }
 <div class="footer">© Lei Games</div>
 
 </div>
-
-<script>
-(function(){
-  if(navigator.userAgent.toLowerCase().includes("tiktok")){
-    document.body.classList.add("tiktok");
-    document.getElementById("tiktokWarning").style.display = "block";
-  }
-})();
-</script>
-
 </body>
 </html>
